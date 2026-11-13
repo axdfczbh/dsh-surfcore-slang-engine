@@ -1,0 +1,3 @@
+- insert:
+    - id: slang-engine
+      name: 'dsh-surfcore-slang-engine'
