@@ -1,16 +1,16 @@
 ﻿# DeepSeek 网络用语学习引擎（dsh-surfcore-slang-engine）
 
-SurfCore 群聊黑话引擎（DSH bundle 插件）。
+SurfCore 群聊网络用语引擎（DSH bundle 插件）。
 
 由 **AX's DeepSeek** 实现，参与者 **AXdfczbh**。
 
 ## 它是什么
 
-把桥接里散落各处的黑话逻辑抽出来，做成一个独立引擎：
+把桥接里散落各处的网络用语逻辑抽出来，做成一个独立引擎：
 
 - **词库存储**：沿用桥接的 `state/slang.json`，插件是唯一写入方（带备份轮转与旧格式迁移）；
 - **规则**：两道门（群内证据 + 含义可信）、按群挡位、命中优先注入、注入污染防护；
-- **设置页**：DSH 设置 →「黑话引擎」，看统计、切挡位、配按群覆盖、预览注入。
+- **设置页**：DSH 设置 →「网络用语引擎」，看统计、切挡位、配按群覆盖、预览注入。
 
 **不碰 QQ、不调模型、不建会话**——那部分留在桥接（它有消息通道和学习会话）。
 
@@ -39,7 +39,7 @@ GET/POST /api/slang-engine/settings
 1. 把本目录加进 desktop profile 依赖（`link:` 或 `file:`）；
 2. 在 profile 的 `package.json` → `dsh.profile.bundles` 里加 `dsh-surfcore-slang-engine`；
 3. 重启 DSH；
-4. 设置页出现「黑话引擎」即成功。
+4. 设置页出现「网络用语引擎」即成功。
 
 ### 让模型能主动查词（可选，推荐）
 
@@ -88,7 +88,7 @@ test/engine.test.mjs
 - **B 管线（实验）**：`bili.comments.enabled` 打开后，额外抓公开评论（wbi 签名、频控、过滤广告/复读），
   默认关闭，可能触发 B站 风控。
 
-配置项都在设置页「黑话引擎 · B站」：跑的时间、素材条数/字数、每天视频数、每视频条数、请求间隔。
+配置项都在设置页「网络用语引擎 · B站」：跑的时间、素材条数/字数、每天视频数、每视频条数、请求间隔。
 桥接运行时读取本设置（`GET /api/slang-engine/settings` 的 `bili` 字段），两边默认值一致。
 
 ## 从旧版本迁移
@@ -113,3 +113,4 @@ test/engine.test.mjs
 - 插件**不会**修改 SurfCore 的已安装文件，也不会在运行时改 DSH 的 profile 补丁；
 - `scripts/register-mcp.mjs` 是**手动**脚本：只有你显式运行它，才会往 profile 的
   `cordis.patch.yml` 写一行 MCP 注册。
+
