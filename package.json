@@ -1,6 +1,6 @@
 {
     "name": "dsh-surfcore-slang-engine",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "DeepSeek 网络用语学习引擎：基于 SurfCore 运行，把原来的网络用语学习逻辑改为插件统一管理——QQ 与 B站 同库分页、默认按需查询、两道门与同族限制入库、自动确认/研究/设置页。本作品由 AX's deepseek 制作，AXdfczbh 提供设想；只是对现有逻辑做了符合制造者口味的修改，请勿与原插件功能攀比，涉侵权请联系删除。",
     "type": "module",
     "license": "MIT",
